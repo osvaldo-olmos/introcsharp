@@ -23,6 +23,9 @@ namespace Cadenas
             string cadena4 = "Matt Dammon";
 
             Console.WriteLine( (object) cadena3 == (object) cadena4);
+
+            // Esto no se puede hacer ya que las cadenas son inmutables
+            //cadena1[0] = "U";
         }
     }
 }
