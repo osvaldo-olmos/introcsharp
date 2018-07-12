@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{D0AE8874-F4FC-4325-A425-FF7EE94F897B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Arreglos-Ej5/src/Program.cs">
+    <Files>
+      <File FileName="Arreglos-Ej5/src/Program.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Arreglos-Ej5" expanded="True">
+            <Node name="Arreglos-Ej5" expanded="True">
+              <Node name="src" expanded="True">
+                <Node name="Program.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Arreglos-Ej5 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

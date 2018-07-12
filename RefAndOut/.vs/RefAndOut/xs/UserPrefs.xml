@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{35640036-27BB-4125-8070-2C4A7E378D6A}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RefAndOut/src/Parametros.cs">
+    <Files>
+      <File FileName="RefAndOut/src/Parametros.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="RefAndOut" expanded="True">
+            <Node name="RefAndOut" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.RefAndOut PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
