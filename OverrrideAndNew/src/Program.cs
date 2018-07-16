@@ -49,8 +49,8 @@ class Program
         Derived - Method1
         Derived - Method2
         Derived - Method1 //Because override makes to use the method from the derived class
-        Base - Method2  //Because Method2 implementation are differents (due to new usage) in Base and Derived
-                        //Classes. bcdc is type of BaseClass, then it access to its implementation.
+        Base - Method2  //Because Method2 implementation are different (due to new usage) in Base and Derived
+                        //Classes. bcdc reference is type of BaseClass, then it access to its implementation.
     */
 }  
 }
