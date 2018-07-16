@@ -34,11 +34,8 @@ namespace OOP_EjemplosClase7
          
         public int Deposito(double cantidad)
         {
-
             if (cantidad <=0) return 1;
-
             this.saldo += cantidad;
-
             return 0;
         }
         */
@@ -62,7 +59,6 @@ namespace OOP_EjemplosClase7
 
                 return 0;
         }
-
 
     }
 }
