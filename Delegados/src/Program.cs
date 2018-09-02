@@ -3,6 +3,7 @@
 namespace Delegados
 {
     public delegate int Operacion(int a, int b);
+    public delegate void Del(string message);
 
     class Program
     {
@@ -27,20 +28,45 @@ namespace Delegados
             Console.WriteLine($"Multiplicacion de {x} por {y} es: {multiplicacion}");
             return multiplicacion;
         }
-        static void Main(string[] args)
+
+        public void DelegateMethod(string message)
         {
+            System.Console.WriteLine(message);
+        }
+
+        static void RunEjemplo1(){
+            
+            //Instanciando a los delegados
             Operacion mas = new Operacion(Suma);
             Operacion menos = new Operacion(Resta);
             Operacion por = new Operacion(Multiplicacion);
 
+            //Invocando a los delegados
             int r1 = mas(4, 5); // r1 es igual a 9
             int r2 = menos(4, 5); // r2 es igual a -1
             int r3 = por(4, 5); // r3 es igual a 20
 
+            //Concatentando delegados
             Operacion combinado = mas;
             combinado += por; // combinación con el operador +=
 
+            //Ejecutando la concatenacion
             int r4 = combinado(4, 5); // r4 es igual a 20
+        }
+
+        static void RunEjemplo2(){
+            
+            //Instanciando a los delegados
+            Program program =new Program();
+            Del handler = new Del(program.DelegateMethod);
+            //Invocando a los delegados
+            handler("Hello World");
+        }
+
+        static void Main(string[] args)
+        {
+            //RunEjemplo1();
+            RunEjemplo2();
         }
     }
 }
