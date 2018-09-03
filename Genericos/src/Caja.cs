@@ -16,7 +16,7 @@ namespace Genericos.src
 
     public class CajaLimitada<T, U, V>
         where T : struct
-        where U : Array<U>
+        where U : IEquatable<U>
         where V : new()
     {
 
