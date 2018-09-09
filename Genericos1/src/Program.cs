@@ -3,7 +3,7 @@
 namespace Genericos1
 {
 
-    class Jugador{
+    public class Jugador{
         public string Nombre { get ; set; }
         public string Apellido { get ; set; }
 
@@ -83,23 +83,46 @@ namespace Genericos1
 
     class Program
     {
+        // static void Main(string[] args)
+        // {
+        //     Futbolista player =new Futbolista("Ramon", "Medina Bello", "Levanta sus brazos");
+        //     Futbolista player1 =new Futbolista("Joya", "Dybala", "Hace la L");
+
+        //     EquipoDeFutbol team =new EquipoDeFutbol("Alto Team");
+        //     team.Jugadores =new Futbolista[] {player, player1 };
+
+        //     Console.Write(team.SaludaALaHinchada());
+
+        //     Basquetbolista player2 =new Basquetbolista("Pichi", "Campana", "Pica la bola");
+        //     Basquetbolista player3 =new Basquetbolista("Gusano", "Rodman", "Tira saludo de rappers");
+
+        //     EquipoDeBasquet team1 =new EquipoDeBasquet("Drink Team");
+        //     team1.Jugadores =new Basquetbolista[] {player2, player3 };
+
+        //     Console.Write(team1.SaludaALaHinchada());
+        // }
+
         static void Main(string[] args)
         {
             Futbolista player =new Futbolista("Ramon", "Medina Bello", "Levanta sus brazos");
-            Futbolista player1 =new Futbolista("Joya", "Dybala", "La L de la Di Birra");
+            Futbolista player1 =new Futbolista("Joya", "Dybala", "Hace la L");
 
-            EquipoDeFutbol team =new EquipoDeFutbol("Alto Team");
-            team.Jugadores =new Futbolista[] {player, player1 };
+            Team team =new Team("Alto Team");
+            //Equipo<Futbolista> team =new Equipo<Futbolista>("Alto Team");
+
+            team.Jugadores.Add(player);
+            team.Jugadores.Add(player1);
 
             Console.Write(team.SaludaALaHinchada());
 
             Basquetbolista player2 =new Basquetbolista("Pichi", "Campana", "Pica la bola");
             Basquetbolista player3 =new Basquetbolista("Gusano", "Rodman", "Tira saludo de rappers");
 
-            EquipoDeBasquet team1 =new EquipoDeBasquet("Drink Team");
-            team1.Jugadores =new Basquetbolista[] {player2, player3 };
+            Team team1 =new Team("Dream Team");
+            //Equipo<Basquetbolista> team =new Equipo<Basquetbolista>("Dream Team");
 
             Console.Write(team1.SaludaALaHinchada());
         }
+
     }
 }
