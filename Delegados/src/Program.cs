@@ -50,8 +50,9 @@ namespace Delegados
             Operacion combinado = mas;
             combinado += por; // combinación con el operador +=
 
+            Console.WriteLine("----------------------");
             //Ejecutando la concatenacion
-            int r4 = combinado(4, 5); // r4 es igual a 20
+            int r4 = combinado(3, 3);
         }
 
         static void RunEjemplo2(){
