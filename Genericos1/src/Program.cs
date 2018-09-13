@@ -22,19 +22,20 @@ namespace Genericos1
 
     class Futbolista : Jugador
     {
-        public string Posicion { get ; set; }
+        public short Posicion { get ; set; }
         public string PiernaHabil { get ; set; }
-        public Futbolista(string nombre, string apellido, string gesto) : base(nombre, apellido, gesto)
+        public Futbolista(string nombre, string apellido, string gesto, string piernaHabil, short posicion ) : base(nombre, apellido, gesto)
         {
-        
+            Posicion =posicion;
+            PiernaHabil = piernaHabil;
         }
     }
     class Basquetbolista : Jugador
     {
-        public string Posicion { get ; set; }
-        public Basquetbolista(string nombre, string apellido, string gesto) : base(nombre, apellido, gesto)
+        public double Altura { get ; set; }
+        public Basquetbolista(string nombre, string apellido, string gesto, double altura) : base(nombre, apellido, gesto)
         {
-        
+            Altura =altura;
         }
     }
 
@@ -104,8 +105,8 @@ namespace Genericos1
 
         static void Main(string[] args)
         {
-            Futbolista player =new Futbolista("Ramon", "Medina Bello", "Levanta sus brazos");
-            Futbolista player1 =new Futbolista("Joya", "Dybala", "Hace la L");
+            Futbolista player =new Futbolista("Ramon", "Medina Bello", "Levanta sus brazos", "ninguna", 7);
+            Futbolista player1 =new Futbolista("Joya", "Dybala", "La L del Loro", "derecha", 9);
 
             Team team =new Team("Alto Team");
             //Equipo<Futbolista> team =new Equipo<Futbolista>("Alto Team");
@@ -115,8 +116,8 @@ namespace Genericos1
 
             Console.Write(team.SaludaALaHinchada());
 
-            Basquetbolista player2 =new Basquetbolista("Pichi", "Campana", "Pica la bola");
-            Basquetbolista player3 =new Basquetbolista("Gusano", "Rodman", "Tira saludo de rappers");
+            Basquetbolista player2 =new Basquetbolista("Pichi", "Campana", "Pica la bola", 1.98);
+            Basquetbolista player3 =new Basquetbolista("Gusano", "Rodman", "Tira saludo gansta", 1.81);
 
             Team team1 =new Team("Dream Team");
             //Equipo<Basquetbolista> team =new Equipo<Basquetbolista>("Dream Team");

@@ -2,20 +2,24 @@
 
 namespace Delegados3
 {
-    public delegate void DelegateMethod(string message);
+    public delegate void Del(string message);
 
     class Publisher {
 
-        DelegateMethod handler;
-        public void Subscribe(DelegateMethod eventHandler){
+        Del handler;
+        public void Subscribe(Del eventHandler){
             this.handler += eventHandler;
+        }
+
+        public void UnSubscribe(Del eventHandler){
+            this.handler -= eventHandler;
         }
 
         public void Run(){
 
             for(int i=0; i < 10; i++){
                 handler($"event {i} !!!");
-                System.Threading.Thread.Sleep(5000);
+                System.Threading.Thread.Sleep(2000);
             }
             
         }
@@ -43,6 +47,10 @@ namespace Delegados3
             publisher.Subscribe(subscriber1.EventHandler);
             SubscriberTwo subscriber2 =new SubscriberTwo();
             publisher.Subscribe(subscriber2.EventHandler);
+
+            publisher.Run();
+
+            publisher.UnSubscribe(subscriber2.EventHandler);
 
             publisher.Run();
         }
