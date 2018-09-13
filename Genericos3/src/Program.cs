@@ -29,6 +29,18 @@ namespace Genericos3
             b = t;
         }
 
+        public class Helper<T>
+        {
+            T Content;
+            public Helper(T content){
+                Content =content;
+            }
+            public void Method<T>(T input)
+            {
+                Console.WriteLine(input);
+            }
+        }
+
         static void Main(string[] args)
         {
             int uno = 1, dos = 2;
@@ -49,6 +61,11 @@ namespace Genericos3
             //Errores
             //Swap(ref uno, ref d2); // Error, los tipos no pueden ser inferidos
             //Swap<int>(ref uno, ref d2); // Error, d2 no es entero
+
+            //Clases genericas y metodos genericos     
+            Helper<int> helper = new Helper<int>(28);
+            helper.Method<string>("Hello");
+
         }
     }
 }
