@@ -81,48 +81,50 @@ namespace Genericos1
 
     }
 
-
     class Program
     {
-        // static void Main(string[] args)
-        // {
-        //     Futbolista player =new Futbolista("Ramon", "Medina Bello", "Levanta sus brazos");
-        //     Futbolista player1 =new Futbolista("Joya", "Dybala", "Hace la L");
-
-        //     EquipoDeFutbol team =new EquipoDeFutbol("Alto Team");
-        //     team.Jugadores =new Futbolista[] {player, player1 };
-
-        //     Console.Write(team.SaludaALaHinchada());
-
-        //     Basquetbolista player2 =new Basquetbolista("Pichi", "Campana", "Pica la bola");
-        //     Basquetbolista player3 =new Basquetbolista("Gusano", "Rodman", "Tira saludo de rappers");
-
-        //     EquipoDeBasquet team1 =new EquipoDeBasquet("Drink Team");
-        //     team1.Jugadores =new Basquetbolista[] {player2, player3 };
-
-        //     Console.Write(team1.SaludaALaHinchada());
-        // }
-
         static void Main(string[] args)
         {
-            Futbolista player =new Futbolista("Ramon", "Medina Bello", "Levanta sus brazos", "ninguna", 7);
-            Futbolista player1 =new Futbolista("Joya", "Dybala", "La L del Loro", "derecha", 9);
+            Futbolista futbolista1 =new Futbolista("Ramon", "Medina Bello", "Levanta sus brazos", "ninguna", 7);
+            Futbolista futbolista2 =new Futbolista("Joya", "Dybala", "La L del Loro", "derecha", 9);
 
-            Team team =new Team("Alto Team");
-            //Equipo<Futbolista> team =new Equipo<Futbolista>("Alto Team");
+            Basquetbolista basquetbolista1 =new Basquetbolista("Pichi", "Campana", "Pica la bola", 1.98);
+            Basquetbolista basquetbolista2 =new Basquetbolista("Gusano", "Rodman", "Tira saludo gansta", 1.81);
 
-            team.Jugadores.Add(player);
-            team.Jugadores.Add(player1);
+            //---- Solucion con equipos especificos ----------------------
+            EquipoDeFutbol platense =new EquipoDeFutbol("Platense");
+            platense.Jugadores = new Futbolista[] {futbolista1, futbolista2 };
 
-            Console.Write(team.SaludaALaHinchada());
+            EquipoDeBasquet obras =new EquipoDeBasquet("Obras Sanitarias");
+            obras.Jugadores = new Basquetbolista[] {basquetbolista1, basquetbolista2 };
 
-            Basquetbolista player2 =new Basquetbolista("Pichi", "Campana", "Pica la bola", 1.98);
-            Basquetbolista player3 =new Basquetbolista("Gusano", "Rodman", "Tira saludo gansta", 1.81);
+            Console.Write(platense.SaludaALaHinchada());
+            Console.Write(obras.SaludaALaHinchada());
 
-            Team team1 =new Team("Dream Team");
-            //Equipo<Basquetbolista> team =new Equipo<Basquetbolista>("Dream Team");
 
-            Console.Write(team1.SaludaALaHinchada());
+            //---- Solucion con herencia ----------------------
+            Equipo ferro =new Equipo("Ferro");
+            ferro.Jugadores = new Jugador[] {futbolista1, futbolista2, basquetbolista1 };
+
+            Equipo atenas =new Equipo("Atenas de Cordoba");
+            atenas.Jugadores = new Jugador[] {basquetbolista1, basquetbolista2, futbolista1};
+
+            Console.Write(ferro.SaludaALaHinchada());
+            Console.Write(atenas.SaludaALaHinchada());
+
+            //---- Solucion con Genericos ----------------------
+            Team<Futbolista> aldosivi =new Team<Futbolista>("Aldosivi");
+            aldosivi.Jugadores.Add(futbolista1);
+            aldosivi.Jugadores.Add(futbolista2);
+            //aldosivi.Jugadores.Add(basquetbolista1); //Error
+            
+            Team<Basquetbolista> regatas =new Team<Basquetbolista>("Regatas de Corrientes");
+            regatas.Jugadores.Add(basquetbolista1);
+            regatas.Jugadores.Add(basquetbolista2);
+            //regatas.Jugadores.Add(futbolista2); //Error
+
+            Console.Write(aldosivi.SaludaALaHinchada());
+            Console.Write(regatas.SaludaALaHinchada());
         }
 
     }
