@@ -91,7 +91,7 @@ namespace Genericos1
             Basquetbolista basquetbolista1 =new Basquetbolista("Pichi", "Campana", "Pica la bola", 1.98);
             Basquetbolista basquetbolista2 =new Basquetbolista("Gusano", "Rodman", "Tira saludo gansta", 1.81);
 
-            //---- Solucion con equipos especificos ----------------------
+            /*---- Solucion con equipos especificos ----------------------
             EquipoDeFutbol platense =new EquipoDeFutbol("Platense");
             platense.Jugadores = new Futbolista[] {futbolista1, futbolista2 };
 
@@ -101,7 +101,7 @@ namespace Genericos1
             Console.Write(platense.SaludaALaHinchada());
             Console.Write(obras.SaludaALaHinchada());
 
-
+*/
             //---- Solucion con herencia ----------------------
             Equipo ferro =new Equipo("Ferro");
             ferro.Jugadores = new Jugador[] {futbolista1, futbolista2, basquetbolista1 };
