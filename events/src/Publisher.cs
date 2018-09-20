@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 namespace events
 {
@@ -27,7 +28,7 @@ public class Publisher
         {
             Random rnd = new Random();
 
-            // Generate 10 temperatures between 0 and 100 randomly.
+            // Generate 10 numbers randomly.
             for (int ctr = 1; ctr <= 10; ctr++)
             {
                 if (GeneratingNumber!= null)
@@ -36,7 +37,7 @@ public class Publisher
                 }
                 int generated = rnd.Next();
                 Console.WriteLine($"Se genero el numero: {generated}");
-
+                Thread.Sleep(2000);
             }
         }
     }

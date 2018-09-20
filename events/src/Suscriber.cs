@@ -17,10 +17,10 @@ namespace events
             Console.WriteLine($"Soy {this.Name} Y  {sender.Name} generará un número");
         }
 
-        /* Otro manejador */
+        /* Otro manejador
         public void MyEventHandler1(Publisher sender)
         {
             Console.WriteLine($"Soy {this.Name} Y  {sender.Name} generará un número");
-        }  
+        }   */
     }
 }

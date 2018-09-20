@@ -18,6 +18,8 @@ namespace events
             g.GeneratingNumber += s2.MyEventHandler;
 
             g.GenerateNumbers();
+            g.GeneratingNumber -= s2.MyEventHandler;
+            g.GenerateNumbers();
         }
 
         /*private static void Escenario2()
