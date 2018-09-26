@@ -14,13 +14,7 @@ namespace events
         /*Este es el manejador de eventos*/
         public void MyEventHandler(Publisher sender)
         {
-            Console.WriteLine($"Soy {this.Name} Y  {sender.Name} generará un número");
+            Console.WriteLine($"Soy {this.Name} Y  {sender.Name} me informa que generara un numero");
         }
-
-        /* Otro manejador
-        public void MyEventHandler1(Publisher sender)
-        {
-            Console.WriteLine($"Soy {this.Name} Y  {sender.Name} generará un número");
-        }   */
     }
 }

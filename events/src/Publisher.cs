@@ -36,7 +36,7 @@ public class Publisher
                     GeneratingNumber(this);
                 }
                 int generated = rnd.Next();
-                Console.WriteLine($"Se genero el numero: {generated}");
+                Console.WriteLine($"Soy {this.Name} y genere el numero: {generated}");
                 Thread.Sleep(2000);
             }
         }

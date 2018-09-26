@@ -6,7 +6,9 @@ namespace events
     {
         static void Main(string[] args)
         {
-            Escenario1();
+            //Escenario1();
+            //Escenario2();
+            Escenario3();
         }
 
         private static void Escenario1()
@@ -22,15 +24,28 @@ namespace events
             g.GenerateNumbers();
         }
 
-        /*private static void Escenario2()
+        private static void Escenario2()
         {
             OtherPublisher g = new OtherPublisher("Big Generator");
             OtherSuscriber s1 = new OtherSuscriber("Suscriber1");
-            g.GeneratingNumber += s1.MyEventHandler1;
+            g.GeneratingNumber += s1.MyEventHandler;
+            
             OtherSuscriber s2 = new OtherSuscriber("Suscriber2");
-            g.GeneratingNumber += s2.MyEventHandler1;
+            g.GeneratingNumber += s2.MyEventHandler;
 
             g.GenerateNumbers();
-        }*/
+        }
+
+        private static void Escenario3()
+        {
+            OtherPublisher g = new OtherPublisher("Big Generator");
+            OtherSuscriber s1 = new OtherSuscriber("Suscriber1");
+            g.NewNumber += s1.MyEventHandler1;
+            
+            OtherSuscriber s2 = new OtherSuscriber("Suscriber2");
+            g.NewNumber += s2.MyEventHandler1;
+
+            g.GenerateNumbers();
+        }
     }
 }
