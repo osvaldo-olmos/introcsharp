@@ -8,7 +8,9 @@ public class OtherPublisher
          */
         public event EventHandler GeneratingNumber;
 
-        public event EventHandler<int> NewNumber;
+        ///Opcion con pasaje de argumentos
+         public event EventHandler<int> NewNumber;
+         
         public string Name { get; }
 
         public OtherPublisher(string name)
