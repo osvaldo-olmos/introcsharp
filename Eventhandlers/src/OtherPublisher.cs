@@ -6,7 +6,7 @@ public class OtherPublisher
     {
         /* Opcion con EventHandler
          */
-        public event EventHandler GeneratingNumber;
+        public event EventHandler GeneratingNumberEvent;
 
         public string Name { get; }
 
@@ -15,16 +15,18 @@ public class OtherPublisher
             Name =name;
         }
 
-        public void GenerateNumbers()
+        public void Run()
         {
             Random rnd = new Random();
 
             // Generate 10 temperatures between 0 and 100 randomly.
             for (int ctr = 1; ctr <= 10; ctr++)
             {
-                if (GeneratingNumber != null)
+                if (GeneratingNumberEvent != null)
                 {
-                    GeneratingNumber(this, EventArgs.Empty);
+                    //El 2do argumento indica que no quiero pasarle
+                    //argumentos al EventHandler
+                    GeneratingNumberEvent(this, EventArgs.Empty);
                 }
                 int generated = rnd.Next();
 
