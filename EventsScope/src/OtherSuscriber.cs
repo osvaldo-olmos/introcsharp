@@ -24,9 +24,6 @@ namespace events
             Console.WriteLine($"Soy {this.Name} Y  {publisher.Name} me informa el numero {number}");
         }
 
-        public void MyEventHandler2(int number)
-        {
-            Console.WriteLine($"Soy {this.Name} y alguien me informa el numero {number}");
-        }
+        public void MyEventHandler2(int number) => Console.WriteLine($"Soy {this.Name} y alguien me informa el numero {number}");
     }
 }

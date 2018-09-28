@@ -9,7 +9,7 @@ public class OtherPublisher
         public event EventHandler GeneratingNumber;
 
         //Ultimo ejemplo
-        public event EventHandler<int> NewNumber;
+        public event EventHandler<int> NewNumberEvent;
          
         public Action<int> NewNumberAction;
 
@@ -27,10 +27,14 @@ public class OtherPublisher
             // Generate 10 temperatures between 0 and 100 randomly.
             for (int ctr = 1; ctr <= 10; ctr++)
             {
-                if (GeneratingNumber != null)
-                {
-                    GeneratingNumber(this, EventArgs.Empty);
-                }
+                // if (GeneratingNumber != null)
+                // {
+                //     GeneratingNumber(this, EventArgs.Empty);
+                // }
+                
+                //Una manera resumida de hacer lo mismo
+                GeneratingNumber?.Invoke(this, EventArgs.Empty);
+                
                 int generated = rnd.Next();
 
                 Console.WriteLine($"Soy {this.Name} y genere el numero: {generated}");
