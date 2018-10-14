@@ -14,7 +14,6 @@ public class Descartable : IDisposable
 
     public void DoSomething()
     {
-        //throw new ApplicationException("Excepcion !");
         Console.WriteLine("Descartable Doing Something.");;
     }
 }

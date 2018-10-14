@@ -9,8 +9,8 @@ namespace Using
         {
             //Escenario1();
             //Escenario2();
-            Escenario3();
-            //Escenario4();
+            //Escenario3();
+            Escenario4();
         }
 
         private static void Escenario1()
