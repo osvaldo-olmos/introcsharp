@@ -40,7 +40,7 @@ namespace Lambdas
             
             //Instanciando a los delegados
             //Operacion mas = new Operacion(Suma);
-            Operacion mas = new Operacion((int x, int y) => {return x + y;});
+            Operacion mas = new Operacion((x,y) =>  x + y);
             Operacion menos = new Operacion(Resta);
             Operacion por = new Operacion(Multiplicacion);
 
@@ -72,9 +72,9 @@ namespace Lambdas
             string[] palabras = {"hola", "hala", "habla", "zzz"};
 
             BubbleSorter sorter =new BubbleSorter();
-            sorter.Sort(palabras, (x, y) => {   return  x.Length > y.Length ? 1 :
-                                                        x.Length < y.Length ? -1 : 
-                                                        string.Compare(x, y); });
+            sorter.Sort(palabras, (x, y) => x.Length > y.Length ? 1 :
+                                            x.Length < y.Length ? -1 : 
+                                            string.Compare(x, y));
 
             foreach (var item in palabras)
             {
@@ -106,9 +106,9 @@ namespace Lambdas
 
         static void Main(string[] args)
         {
-            //RunEjemplo1();
+            RunEjemplo1();
             //RunEjemplo2();
-            RunEjemplo3();
+            //RunEjemplo3();
         }
     }
 }
