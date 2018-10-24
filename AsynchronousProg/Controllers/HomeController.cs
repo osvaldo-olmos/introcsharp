@@ -14,31 +14,33 @@ namespace AsynchronousProg.Controllers
         {
             Stopwatch watch = new Stopwatch();
             watch.Start();
-            TimeConsumingModel service = new TimeConsumingModel();
-            var content = service.HeavyContent1();
-            var count = service.HeavyContent2();
-            var name = service.HeavyContent3();
+            TimeConsumingModel model = new TimeConsumingModel();
+            var content = model.HeavyContent1();
+            var count = model.HeavyContent2();
+            var name = model.HeavyContent3();
 
             watch.Stop();
             ViewBag.WatchMilliseconds = watch.ElapsedMilliseconds;
+            ViewBag.Content = content.ToString() + " - " + count+ " - " + name;
             return View();
         }
 
         [HttpGet]
-        public async Task<ActionResult> IndexAsync()
+        public ActionResult IndexAsync()
         {
             Stopwatch watch = new Stopwatch();
             watch.Start();
-            TimeConsumingModel service = new TimeConsumingModel();
-            var contentTask = service.HeavyContent1Async();
-            var countTask = service.HeavyContent2Async();
-            var nameTask = service.HeavyContent3Async();
+            TimeConsumingModel model = new TimeConsumingModel();
+            var contentTask = model.HeavyContent1Async();
+            var countTask = model.HeavyContent2Async();
+            var nameTask = model.HeavyContent3Async();
 
-            var content = await contentTask;
-            var count = await countTask;
-            var name = await nameTask;
+            var content = contentTask;
+            var count = countTask;
+            var name = nameTask;
             watch.Stop();
             ViewBag.WatchMilliseconds = watch.ElapsedMilliseconds;
+            ViewBag.Content = content.ToString() + " - "+ count +" - "+ name;
             return View("Index");
         }
 
