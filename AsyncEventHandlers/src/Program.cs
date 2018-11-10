@@ -1,0 +1,25 @@
+﻿using System;
+using System.Threading.Tasks;
+
+namespace events
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Escenario1();
+        }
+
+        private static void Escenario1()
+        {
+            Publisher g = new Publisher("Big Generator");
+            Suscriber s1 = new Suscriber("Suscriber1");
+            g.NewNumberEvent +=s1.MyEventHandlerAsync;
+            
+            Suscriber s2 = new Suscriber("Suscriber2");
+            g.NewNumberEvent += s2.MyEventHandlerAsync;
+
+            g.Publish();
+        }
+    }
+}
