@@ -5,7 +5,12 @@ public class Descartable : IDisposable
     bool is_disposed = false;
     private IDisposable databaseConnection;
     private IDisposable frameBufferImage;
-
+    public void Dispose()
+    {
+        Dispose(true);
+        // Le aviso al GC que no lo finalice
+        GC.SuppressFinalize(this);
+    }
     protected virtual void Dispose(bool disposing)
     {
         if (!is_disposed) // Solo si no esta Disposed
@@ -35,19 +40,6 @@ public class Descartable : IDisposable
     public Descartable()
     {
         Console.WriteLine("Nuevo Descartable.");
-    }
-
-    public void Dispose()
-    {
-        Dispose(true);
-        // Le aviso al GC que no lo finalice
-        GC.SuppressFinalize(this);
-    }
-
-    ~Descartable()
-    {
-        Dispose(false);
-        Console.WriteLine("En el destructor.");
     }
 
     public void DoSomething()
