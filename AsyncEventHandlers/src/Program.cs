@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace events
@@ -20,6 +21,8 @@ namespace events
             g.NewNumberEvent += s2.MyEventHandlerAsync;
 
             g.Publish();
+            // Espero un rato para que terminen los eventHandlers asincronicos
+            Thread.Sleep(10000);
         }
     }
 }

@@ -25,7 +25,6 @@ namespace events
             // ------- Asincronic Stuff here ------
             await Task.Delay(1000);
             // ------------------------------------
-            // Este writeline nunca se imprime si no se espera el retorno de este metodo
             Console.WriteLine($"Soy {this.Name} y si no me esperan, esto no se imprime nunca a consola");
         }
 

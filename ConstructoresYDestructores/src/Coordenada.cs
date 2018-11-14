@@ -20,4 +20,8 @@ class Coordenada
     {
     }
 
+    ~Coordenada()
+    {
+
+    }
 }
