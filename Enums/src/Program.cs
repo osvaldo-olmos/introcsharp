@@ -9,6 +9,7 @@ namespace Enums
             //TestEnums();
             //TestBitwise();
             TestEnumAndBitFlags();
+            DiscoverEnumValues();
 
         }
 
@@ -67,23 +68,34 @@ namespace Enums
 
         private static void TestEnumAndBitFlags()
         {
-            Dias meetingDays = Dias.Martes | Dias.Jueves;
-            
-            // Sumo el viernes usando el OR.
-            meetingDays = meetingDays | Dias.Viernes;
+            Color ColoresValidos = Color.Azul | Color.Negro;
 
-            Console.WriteLine("Los dias de reunion son: {0}", meetingDays);
-            // Output: Martes, Jueves, Viernes
+            // Sumo el Amarillo usando el OR.
+            ColoresValidos = ColoresValidos | Color.Amarillo;
+
+            Console.WriteLine("Los colores validos son: {0}", ColoresValidos);
 
             // Quito el Martes con el XOR.
-            meetingDays = meetingDays ^ Dias.Martes;
-            Console.WriteLine("Los dias de reunion son: {0}", meetingDays);
-            // Output: Martes, Viernes
+            ColoresValidos = ColoresValidos ^ Color.Azul;
+            Console.WriteLine("Los colores validos son: {0}", ColoresValidos);
 
             // Chequeando un valor usando AND.
-            bool test = (meetingDays & Dias.Jueves) == Dias.Jueves;
-            Console.WriteLine("Jueves {0} un dia de reunion.", test == true ? "es" : "no es");
-            // Output: Jueves es un dia de reunion.
+            bool test = (ColoresValidos & Color.Negro) == Color.Negro;
+            Console.WriteLine("Negro {0} un color valido.", test == true ? "es" : "no es");
+        }
+
+        private static void DiscoverEnumValues()
+        {
+            string s = Enum.GetName(typeof(Color), 4);
+            Console.WriteLine($"El color con valor 4, tiene el nombre {s}");
+
+            Console.WriteLine("Los posibles valores de Color son:");
+            foreach (int i in Enum.GetValues(typeof(Color)))
+                Console.WriteLine(i);
+
+            Console.WriteLine("Los posibles nombres de Color son:");
+            foreach (string str in Enum.GetNames(typeof(Color)))
+                Console.WriteLine(str);
         }
     }
 }
