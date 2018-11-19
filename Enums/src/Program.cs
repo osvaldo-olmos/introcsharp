@@ -2,26 +2,6 @@
 
 namespace Enums
 {
-    enum Dia { Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado };
-    enum Mes : byte
-    {
-        Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto,
-        Septiembre, Octubre, Noviembre, Diciembre
-    };
-
-    [Flags]
-    enum Days
-    {
-        None = 0x0,
-        Sunday = 0x1,
-        Monday = 0x2,
-        Tuesday = 0x4,
-        Wednesday = 0x8,
-        Thursday = 0x10,
-        Friday = 0x20,
-        Saturday = 0x40
-    }
-
     class Program
     {
         static void Main(string[] args)
@@ -87,22 +67,23 @@ namespace Enums
 
         private static void TestEnumAndBitFlags()
         {
-            Days meetingDays = Days.Tuesday | Days.Thursday;
-            // Set an additional flag using bitwise OR.
-            meetingDays = meetingDays | Days.Friday;
+            Dias meetingDays = Dias.Martes | Dias.Jueves;
+            
+            // Sumo el viernes usando el OR.
+            meetingDays = meetingDays | Dias.Viernes;
 
-            Console.WriteLine("Meeting days are {0}", meetingDays);
-            // Output: Meeting days are Tuesday, Thursday, Friday
+            Console.WriteLine("Los dias de reunion son: {0}", meetingDays);
+            // Output: Martes, Jueves, Viernes
 
-            // Remove a flag using bitwise XOR.
-            meetingDays = meetingDays ^ Days.Tuesday;
-            Console.WriteLine("Meeting days are {0}", meetingDays);
-            // Output: Meeting days are Thursday, Friday
+            // Quito el Martes con el XOR.
+            meetingDays = meetingDays ^ Dias.Martes;
+            Console.WriteLine("Los dias de reunion son: {0}", meetingDays);
+            // Output: Martes, Viernes
 
-            // Test value of flags using bitwise AND.
-            bool test = (meetingDays & Days.Thursday) == Days.Thursday;
-            Console.WriteLine("Thursday {0} a meeting day.", test == true ? "is" : "is not");
-            // Output: Thursday is a meeting day.
+            // Chequeando un valor usando AND.
+            bool test = (meetingDays & Dias.Jueves) == Dias.Jueves;
+            Console.WriteLine("Jueves {0} un dia de reunion.", test == true ? "es" : "no es");
+            // Output: Jueves es un dia de reunion.
         }
     }
 }
