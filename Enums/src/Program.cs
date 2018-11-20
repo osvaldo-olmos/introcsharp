@@ -9,7 +9,7 @@ namespace Enums
             //TestEnums();
             //TestBitwise();
             TestEnumAndBitFlags();
-            DiscoverEnumValues();
+            //DiscoverEnumValues();
 
         }
 
@@ -75,7 +75,7 @@ namespace Enums
 
             Console.WriteLine("Los colores validos son: {0}", ColoresValidos);
 
-            // Quito el Martes con el XOR.
+            // Quito el Azul con el XOR.
             ColoresValidos = ColoresValidos ^ Color.Azul;
             Console.WriteLine("Los colores validos son: {0}", ColoresValidos);
 
