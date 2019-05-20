@@ -6,36 +6,60 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            int[] list = { 21, 73, 14, 24, 20, 3, 1 };
-            int[] temp = new int[list.Length];
- 
-            Array.Copy(list, temp, list.Length);
- 
-            Console.WriteLine("Array Original: ");
-            Show(list);
- 
-            Array.Reverse(temp);
-            Console.WriteLine("Array Invertido: ");
-            Show(temp);
- 
-            Array.Sort(list);
-            Console.WriteLine("Arreglo Ordenado: ");
-            Show(list);
+            ImprimeArrayInvertido();
+            CreaArray();
 
         }
-
-        static void Show(int[] myArray)
+        private static void ImprimeArrayInvertido()
         {
-            Console.Write("[ ");
-            for(int i=0; i < myArray.Length; i++)
+            int[] list = { 21, 73, 14, 24, 20, 3, 1 };
+            int[] temp = new int[list.Length];
+
+            Array.Copy(list, temp, list.Length);
+
+            Console.WriteLine("Array Original: ");
+            Utilidades.Show(list);
+
+            Array.Reverse(temp);
+            Console.WriteLine("Array Invertido: ");
+            Utilidades.Show(temp);
+
+            Array.Sort(list);
+            Console.WriteLine("Arreglo Ordenado: ");
+            Utilidades.Show(list);
+        }
+
+        static void CreaArray()
+        {
+
+            Console.WriteLine("Ingrese cant. de elementos");
+            int cantidad = int.Parse(Console.ReadLine());
+
+            int[] vector = new int[cantidad];
+
+            for (int i = 0; i < cantidad; i++)
             {
-                if(i > 0)
-                {
-                    Console.Write(",");
-                }
-                Console.Write(myArray[i]);
+                Console.WriteLine("Ingrese un numero: ");
+                vector[i] = int.Parse(Console.ReadLine());
             }
-            Console.WriteLine("]");
+
+            for (int i = 0; i < vector.Length; i++)
+            {
+                for (int j = i + 1; j < vector.Length; j++)
+                {
+                    if (vector[i] > vector[j])
+                    {
+                        int aux = vector[i];
+                        vector[i] = vector[j];
+                        vector[j] = aux;
+                    }
+                }
+            }
+
+            Console.WriteLine("Vector Ordenado: ");
+            Utilidades.Show(vector);
+            Console.ReadKey();
+
         }
 
     }
