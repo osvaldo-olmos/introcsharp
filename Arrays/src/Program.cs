@@ -7,26 +7,26 @@ namespace Arrays
         static void Main(string[] args)
         {
             ImprimeArrayInvertido();
-            CreaArray();
+           //CreaArray();
 
         }
         private static void ImprimeArrayInvertido()
         {
-            int[] list = { 21, 73, 14, 24, 20, 3, 1 };
-            int[] temp = new int[list.Length];
+            int[] myNumbers = { 21, 73, 14, 24, 20, 3, 1 };
+            int[] temp = new int[myNumbers.Length];
 
-            Array.Copy(list, temp, list.Length);
+            Array.Copy(myNumbers, temp, myNumbers.Length);
 
             Console.WriteLine("Array Original: ");
-            Utilidades.Show(list);
+            Utilidades.Show(myNumbers);
 
             Array.Reverse(temp);
             Console.WriteLine("Array Invertido: ");
             Utilidades.Show(temp);
 
-            Array.Sort(list);
+            Array.Sort(myNumbers);
             Console.WriteLine("Arreglo Ordenado: ");
-            Utilidades.Show(list);
+            Utilidades.Show(myNumbers);
         }
 
         static void CreaArray()

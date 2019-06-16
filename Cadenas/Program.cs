@@ -30,7 +30,8 @@ namespace Cadenas
 
             // Append to StringBuilder.
             StringBuilder strBuilder = new StringBuilder(cadena1);
-            strBuilder.Remove(0,1).Insert(0, "U");
+            strBuilder.Remove(0,1);
+            strBuilder.Insert(0, "U");
             Console.WriteLine(strBuilder);
         }
     }
