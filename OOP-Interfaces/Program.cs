@@ -9,8 +9,17 @@ namespace OOP_Interfaces
         static void Main(string[] args)
         {
 //            DoApproach1();
-            DoApproach2();
+            //DoApproach2();
+            ExplicityImplementing();
 
+        }
+
+        private static void ExplicityImplementing()
+        {
+            SomeClass myObject =new SomeClass();
+            myObject.MethodA();
+            //myObject.MethodB(); Error
+            ((ISomeInterface)myObject).MethodB();
         }
 
         // private static void DoApproach1()
