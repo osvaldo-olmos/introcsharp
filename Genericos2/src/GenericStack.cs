@@ -32,5 +32,11 @@ namespace Genericos2
                 throw new InvalidOperationException("El stack esta vacio. No puedo hacer Pop");
             }
         }
+
+        static void InformarTipo<X>()
+        {
+            var a = typeof(X);
+            Console.WriteLine(a.Name);
+        }
     }
 }

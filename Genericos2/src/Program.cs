@@ -38,35 +38,38 @@ namespace Genericos2
     {
         static void Main(string[] args)
         {
-            //Stack stack = new Stack(3);
+            DoApproachOne();
+            DoApproachTwo();
+        }
+
+        private static void DoApproachOne()
+        {
+            Stack stack = new Stack(3);
 
             //Boxing implicito porque el argumento que le paso es un int y se va a manejar como object
-            //stack.Push(1);
-            //stack.Push(2);
+            stack.Push(1);
+            stack.Push(2);
             
-            // No es type safe esta pila
+            //Es type safe esta pila ?
             //stack.Push("jaramillo");
 
+            // Se necesita unboxing   
+            int number = (int)stack.Pop();
+            Console.WriteLine(number);
+        }
 
-            //Se necesita unboxing   
-            //int number = (int)stack.Pop();
-            
+        private static void DoApproachTwo()
+        {
             GenericStack<int> stack = new GenericStack<int>(3);
             stack.Push(1);
             stack.Push(2);
             
-            //Esta lista es type safe !!!
+            //Es type safe esta pila ?
             //stack.Push("sarasa");
 
             int number =stack.Pop(); 
             Console.WriteLine(number);
 
-        }
-
-        static void InformarTipo<T>()
-        {
-            var a = typeof(T);
-            Console.WriteLine(a.Name);
         }
     }
 }

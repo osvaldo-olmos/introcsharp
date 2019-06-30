@@ -1,0 +1,1 @@
+Implementar una pila que permita almacenar tanto enteros como strings.
