@@ -33,7 +33,7 @@ namespace Genericos1
         }
         private static void DoApproachTwo(Futbolista futbolista1, Futbolista futbolista2, Basquetbolista basquetbolista1, Basquetbolista basquetbolista2)
         {
-            //---- Solucion con herencia ----------------------
+            //---- Solucion con herencia en los jugadores y un contenedor del tipo base ----------------------
             Equipo ferro = new Equipo("Ferro");
             ferro.Jugadores = new Jugador[] { futbolista1, futbolista2, basquetbolista1 };
 
