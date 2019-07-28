@@ -4,8 +4,9 @@ using System;
 
 namespace MetodosGenericos
 {
-    /* Ejercicio:
-     * Crear un arreglo de int, double y string.
+    /* Metodos Genericos - Ejercicio:
+     *
+     * Crear un arreglo de enteros, uno de doubles y otro de strings.
      * Crear un método genérico que reciba un arreglo y una posicion
      * y retorne un string indicando el valor del elemento y el 
      * tipo del mismo.
@@ -20,7 +21,8 @@ namespace MetodosGenericos
 
             Console.WriteLine(InspeccionaElemento(intArray, 0));
             Console.WriteLine(InspeccionaElemento(doubleArray, 3));
-            Console.WriteLine(InspeccionaElemento(stringArray,4));
+            Console.WriteLine(InspeccionaElemento(stringArray, 4));
+
         }
 
         private static string InspeccionaElemento<T>(T[] inputArray, int posicion)

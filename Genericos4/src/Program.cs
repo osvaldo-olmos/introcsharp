@@ -1,5 +1,8 @@
 ﻿﻿using System;
 
+/*
+ * Genericos vs Interfaces
+ */
 namespace Genericos4
 {
 
@@ -25,11 +28,11 @@ namespace Genericos4
         }
     }
 
-    public class Contenedor<T>
+    public class GenericContainer<T>
     {
         public T Content { get; }
 
-        public Contenedor(T content)
+        public GenericContainer(T content)
         {
             Content = content;
         }
@@ -43,8 +46,12 @@ namespace Genericos4
             Container container =new Container(new Foo());
             Container otherContainer =new Container(new Bar());
 
-            Contenedor<Bar> tercerContenedor =new Contenedor<Bar>(new Bar());
-            Bar otherBar =tercerContenedor.Content;
+            //Bar myBar =otherContainer.Content; Error
+            Bar myBar =(Bar)otherContainer.Content; // Unboxing
+
+            //Approach con generics
+            GenericContainer<Bar> tercerContenedor =new GenericContainer<Bar>(new Bar());
+            Bar otherBar =tercerContenedor.Content; //Todo joya. Y sin unboxing
 
         }
     }

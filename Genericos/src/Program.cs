@@ -1,5 +1,8 @@
 ﻿using System;
 
+/**
+ * Primeros conceptos sobre genericos
+ */
 namespace Genericos
 {
     public class Caja<T>

@@ -2,6 +2,9 @@
 
 namespace Genericos2
 {
+/*
+ * Implementar una pila que permita almacenar elementos de tipo entero o strings.
+ */
     public class Stack
     {
         int _size;
