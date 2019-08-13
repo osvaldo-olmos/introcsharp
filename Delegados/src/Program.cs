@@ -39,7 +39,7 @@ namespace Delegados
             //Instanciando a los delegados
             Operacion mas = new Operacion(Suma);
             Operacion menos = new Operacion(Resta);
-            Operacion por = new Operacion(Multiplicacion);
+            Operacion por = Multiplicacion;
 
             //Invocando a los delegados
             int r1 = mas(4, 5); // r1 es igual a 9

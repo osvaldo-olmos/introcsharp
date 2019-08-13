@@ -1,5 +1,8 @@
 ﻿using System;
 
+/*
+ * Delegate as a Callback
+ */
 namespace Delegados1
 {
     public delegate void Del(string message);
