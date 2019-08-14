@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 /*
  * Delegate as a Callback
@@ -12,15 +13,17 @@ namespace Delegados1
         {
             Console.WriteLine(this + " : Doing...");
             callback("The number is: " + (param1 + param2).ToString());
+            Console.WriteLine("Soy Asincrono ?");
         }
     }
 
     class Program
     {
-        public void DelegateMethod(string message)
+        public void CallbackMethod(string message)
         {
             Console.WriteLine(this + ": Executing callback !!!");
             System.Console.WriteLine(message);
+            Thread.Sleep(5000);
         }
 
         static void Main(string[] args)
@@ -30,7 +33,7 @@ namespace Delegados1
             
             Console.WriteLine("Executing main !!!");
 
-            worker.DoAndThenCallback(4, 5, program.DelegateMethod);
+            worker.DoAndThenCallback(4, 5, program.CallbackMethod);
         }
     }
 }

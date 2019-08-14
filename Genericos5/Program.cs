@@ -19,7 +19,7 @@ namespace MetodosGenericos
             double[] doubleArray = { 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7 };
             string[] stringArray = { "pepe", "sigma", "jones", "ultra", "pelota" };
 
-            Console.WriteLine(InspeccionaElemento(intArray, 0));
+            Console.WriteLine(InspeccionaElemento(intArray, 6));
             Console.WriteLine(InspeccionaElemento(doubleArray, 3));
             Console.WriteLine(InspeccionaElemento(stringArray, 4));
 
@@ -27,8 +27,11 @@ namespace MetodosGenericos
 
         private static string InspeccionaElemento<T>(T[] inputArray, int posicion)
         {
-            var elemento = inputArray[posicion];
-            return $"{elemento} es de tipo {elemento.GetType()}";
+            if(posicion < 0 || posicion >= inputArray.Length){
+                return "Ossssooooo !!!";
+            }
+            T elemento = inputArray[posicion];
+            return $"{elemento} es de tipo {typeof(T)}";
         }
     }
 }

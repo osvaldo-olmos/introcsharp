@@ -12,7 +12,7 @@ namespace Delegados2
             // for (int i=0; i < palabras.Length-1; i++)
             // {
             //     for(int j=i+1; j < palabras.Length; j++){
-            //         if(ComparoAsc(palabras[i], palabras[j]) > 0){
+            //         if(ComparoDesc(palabras[i], palabras[j]) > 0){
             //             string buffer =palabras[i];
             //             palabras[i] = palabras[j];
             //             palabras[j] =buffer;

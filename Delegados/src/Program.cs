@@ -53,6 +53,7 @@ namespace Delegados
             Console.WriteLine("----------------------");
             //Ejecutando la concatenacion
             int r4 = combinado(3, 3);
+            Console.WriteLine($"Combinado retorna {r4}");
         }
 
         static void RunEjemplo2(){
