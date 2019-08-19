@@ -19,16 +19,10 @@ namespace events
             
             var publisher =sender as OtherPublisher;
             if(publisher ==null){
-                Console.WriteLine("Todo maaaal");
+                Console.WriteLine("Todo maaaal no reconozco el tipo del sender");
                 return;
             }
-            Console.WriteLine($"Soy {this.Name} Y  {publisher.Name} informa que generara un numero");
-        }
-
-        public void MyEventHandler1(object sender, int number)
-        {
-            var publisher = sender as OtherPublisher;
-            Console.WriteLine($"Soy {this.Name} Y  {publisher.Name} me informa el numero {number}");
+            Console.WriteLine($"Soy {this.Name} Y  {publisher.Name} informa que genero un numero");
         }
 
     }

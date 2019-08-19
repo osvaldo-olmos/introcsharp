@@ -22,15 +22,14 @@ public class OtherPublisher
             // Generate 10 temperatures between 0 and 100 randomly.
             for (int ctr = 1; ctr <= 10; ctr++)
             {
+                int generated = rnd.Next();
+                Console.WriteLine($"Soy {this.Name} y genere el numero: {generated}");
                 if (GeneratingNumberEvent != null)
                 {
                     //El 2do argumento indica que no quiero pasarle
                     //argumentos al EventHandler
                     GeneratingNumberEvent(this, EventArgs.Empty);
                 }
-                int generated = rnd.Next();
-
-                Console.WriteLine($"Soy {this.Name} y genere el numero: {generated}");
             }
         }
     }
