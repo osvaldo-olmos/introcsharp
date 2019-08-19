@@ -1,6 +1,6 @@
 using System;
 
-namespace events
+namespace EventsWithAction
 {
     public class Suscriber
     {
@@ -14,7 +14,7 @@ namespace events
         /*Este es el manejador de eventos*/
         public void MyEventHandler(Publisher sender)
         {
-            Console.WriteLine($"Soy {this.Name} Y  {sender.Name} me informa que generara un numero");
+            Console.WriteLine($"Soy {this.Name} Y  {sender.Name} me informa que genero el numero {sender.LastNumber}");
         }
     }
 }

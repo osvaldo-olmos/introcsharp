@@ -1,13 +1,10 @@
 using System;
 using System.Threading;
 
-namespace events
+namespace EventsWithAction
 {
-public class Publisher
-    {
-        /* Declaro un delegado como template para mis manejadores de eventos
-         */
-        //public delegate void GeneratingNumberEventHandler(Publisher sender);
+    public class Publisher{
+ 
         
         /* Para declara el evento, debo hacerlo indicado lo sig:
         El modificador de acceso (public, internal, …).
@@ -15,10 +12,10 @@ public class Publisher
         El tipo del delegado asociado con ese evento.
         El nombre del evento
          */
-        //public event GeneratingNumberEventHandler GeneratingNumberEvent;
         public event Action<Publisher> GeneratingNumberEvent;
 
         public string Name { get; }
+        public int LastNumber { get; private set;}
 
         public Publisher(string name)
         {
@@ -32,12 +29,13 @@ public class Publisher
             // Generate 10 numbers randomly.
             for (int ctr = 1; ctr <= 10; ctr++)
             {
+                LastNumber = rnd.Next();
+                Console.WriteLine($"Soy {this.Name} y genere el numero: {LastNumber}");
                 if (GeneratingNumberEvent!= null)
                 {
                     GeneratingNumberEvent(this);
                 }
-                int generated = rnd.Next();
-                Console.WriteLine($"Soy {this.Name} y genere el numero: {generated}");
+                
                 Thread.Sleep(2000);
             }
         }
