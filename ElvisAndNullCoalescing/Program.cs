@@ -13,7 +13,14 @@ namespace ElvisAndNullCoalescing
     {
         static public double SumNumbers(List<double[]> setsOfNumbers, int indexOfSetToSum)
         {
-            return setsOfNumbers?[indexOfSetToSum]?.Sum() ?? double.NaN;
+            double ret;
+            if(setsOfNumbers != null && setsOfNumbers[indexOfSetToSum] !=null){
+                ret =setsOfNumbers[indexOfSetToSum].Sum();
+            }else{
+                ret = double.NaN;
+            }
+            return ret;
+            //return setsOfNumbers?[indexOfSetToSum]?.Sum() ?? double.NaN;
         }
         static void Main(string[] args)
         {
