@@ -23,12 +23,11 @@ public class Publisher
                 int _generated = rnd.Next(0,100);
                 if (NewNumberEvent != null)
                 {
+                    Console.WriteLine($"--- Vuelta {ctr} ---");
                     Console.WriteLine($"{this.Name}: 1- {DateTimeOffset.Now.ToString("HH:mm:ss:ffff")}");
                     NewNumberEvent(this, _generated);
                     Console.WriteLine($"{this.Name}: 2- {DateTimeOffset.Now.ToString("HH:mm:ss:ffff")}");
                 }
-                
-
                 Console.WriteLine($"Soy {this.Name} y genere el numero: {_generated}");
             }
         }

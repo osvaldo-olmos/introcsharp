@@ -10,23 +10,23 @@ namespace AsynchronousProg.Controllers
 {
     public class HomeController : Controller
     {
-        // public IActionResult Index()
-        // {
-        //     Stopwatch watch = new Stopwatch();
-        //     watch.Start();
-        //     TimeConsumingModel model = new TimeConsumingModel();
-        //     var content = model.HeavyContent1();
-        //     var count = model.HeavyContent2();
-        //     var name = model.HeavyContent3();
+        public IActionResult Index()
+        {
+            Stopwatch watch = new Stopwatch();
+            watch.Start();
+            TimeConsumingModel model = new TimeConsumingModel();
+            var content = model.HeavyContent1();
+            var count = model.HeavyContent2();
+            var name = model.HeavyContent3();
 
-        //     watch.Stop();
-        //     ViewBag.WatchMilliseconds = watch.ElapsedMilliseconds;
-        //     ViewBag.Content = content.ToString() + " - " + count+ " - " + name;
-        //     return View();
-        // }
+            watch.Stop();
+            ViewBag.WatchMilliseconds = watch.ElapsedMilliseconds;
+            ViewBag.Content = content.ToString() + " - " + count+ " - " + name;
+            return View();
+        }
 
-        [HttpGet]
-        public async Task<ActionResult> Index()
+    //[HttpGet]
+        public async Task<ActionResult> IndexAsync()
         {
             Stopwatch watch = new Stopwatch();
             watch.Start();
