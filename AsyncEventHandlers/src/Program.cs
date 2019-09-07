@@ -8,8 +8,8 @@ namespace events
     {
         static void Main(string[] args)
         {
-            Escenario1();
-            //Escenario2();
+            //Escenario1();
+            Escenario2();
         }
 
         private static void Escenario1()
@@ -34,7 +34,7 @@ namespace events
 
             g.Publish();
             // Espero un rato para que terminen los eventHandlers asincronicos
-            //Thread.Sleep(10000);
+            Thread.Sleep(10000);
         }
     }
 }
