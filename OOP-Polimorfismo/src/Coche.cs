@@ -1,6 +1,6 @@
 using System;
 
-namespace EjemploClase6
+namespace Polimorfismo
 {
     public class Coche
     {
