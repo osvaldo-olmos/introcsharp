@@ -25,12 +25,12 @@ namespace Polimorfismo
             //Coche miCocheABS = new CocheFrenoABS("ABG2345J", "Volkswagen", "EAD555");
             miCoche.Arrancar();
             miCoche.Acelerar(20);
-            (miCoche as Coche).Consume(10);
+            (miCoche as Coche).Consume(10); //Consume esta sobreescrito, por eso se llama al de la clase derivada
             miCoche.Consume(3);
             miCochecito.Consume(50);
             miCoche.Doblar(45);
             miCocheABS.Frena();
-            (miCocheABS as Coche).Frena();
+            (miCocheABS as Coche).Frena(); //Como Frena no está sobreescrito, se llama al de la clase padre.
 
             Console.ReadKey();
 
