@@ -11,15 +11,26 @@ namespace Polimorfismo
         static void Main(string[] args)
         {
 
-            Coche miCoche = new Coche("ABG2345J", "Volkswagen", "EAD555");
+            //Coche miCochecito = new Coche("ABG2345J", "Volkswagen", "EAD555");
+            Coche miCochecito = new Coche{
+                Patente ="ABG2345J",
+                Marca = "Volkswagen",
+                Motor = "EAD555"
+            };
+
             //Pero si es de la clase derivada que pasa con el consumo ???
+            CocheElectrico miCoche = new CocheElectrico("ABG2345J", "Volkswagen", "EAD555");
             //Coche miCoche = new CocheElectrico("ABG2345J", "Volkswagen", "EAD555");
+            CocheFrenoABS miCocheABS = new CocheFrenoABS("ABG2345J", "Volkswagen", "EAD555");
+            //Coche miCocheABS = new CocheFrenoABS("ABG2345J", "Volkswagen", "EAD555");
             miCoche.Arrancar();
             miCoche.Acelerar(20);
-            miCoche.Consume(10);
-            (miCoche.Consume(3);
+            (miCoche as Coche).Consume(10);
+            miCoche.Consume(3);
+            miCochecito.Consume(50);
             miCoche.Doblar(45);
-            miCoche.Frena();
+            miCocheABS.Frena();
+            (miCocheABS as Coche).Frena();
 
             Console.ReadKey();
 

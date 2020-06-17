@@ -2,10 +2,10 @@ using System;
 
 namespace Polimorfismo
 {
-    public class CocheElectrico : Coche
+    class CocheElectrico : Coche
     {
-        public CocheElectrico(string motor, string marca, string patente)
-            : base(motor, marca, patente) { }
+        // public CocheElectrico(string motor, string marca, string patente)
+        //     : base(motor, marca, patente) { }
 
         public override void Consume(int watts)
         {
