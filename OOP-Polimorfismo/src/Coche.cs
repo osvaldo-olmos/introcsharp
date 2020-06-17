@@ -16,18 +16,18 @@ namespace Polimorfismo
         public int Direccion;
         public int Combustible;
 
-        // public Coche(string motor, string marca, string patente)
-        // {
-        //     Motor = motor;
-        //     Marca = marca;
-        //     Patente = patente;
-        //     Velocidad = 0;
-        //     Direccion = 0;
-        //     Combustible = 100;
-        // }
-        // public Coche()
-        // {
-        // }
+        public Coche(string motor, string marca, string patente)
+        {
+            Motor = motor;
+            Marca = marca;
+            Patente = patente;
+            Velocidad = 0;
+            Direccion = 0;
+            Combustible = 100;
+        }
+        public Coche()
+        {
+        }
 
         public void Arrancar()
         {

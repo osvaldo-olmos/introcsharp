@@ -4,8 +4,8 @@ namespace Polimorfismo
 {
     internal class CocheFrenoABS : Coche
     {
-        // public CocheFrenoABS(string motor, string marca, string patente)
-        //     : base(motor, marca, patente) { }
+        public CocheFrenoABS(string motor, string marca, string patente)
+            : base(motor, marca, patente) { }
 
         public new void Frena()
         {
