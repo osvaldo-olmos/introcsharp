@@ -43,6 +43,16 @@ namespace empleados
         {
             return $"{DNI} - {Apellido}, {Nombre}";
         }
+
+        /* public static bool operator ==(Empleado emp1, Empleado emp2)
+        {
+            return (emp1.GetHashCode() == emp2.GetHashCode());
+        }
+    
+        public static bool operator !=(Empleado emp1, Empleado emp2)
+        {
+            return (emp1.GetHashCode() != emp2.GetHashCode());
+        } */
     }
 
 }
