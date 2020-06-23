@@ -29,16 +29,17 @@ namespace OOP_EjemplosClase7
             return true;
         }
 
-        /*
-         Sobrecarga erronea
+        
+        ]/* Sobrecarga erronea porque ya existe un metodo con el mismo nombre y misma
+            cantidad y tipo de argumentos
          
         public int Deposito(double cantidad)
         {
             if (cantidad <=0) return 1;
             this.saldo += cantidad;
             return 0;
-        }
-        */
+        }*/
+        
 
         public bool Deposito(float cantidad)
         {
