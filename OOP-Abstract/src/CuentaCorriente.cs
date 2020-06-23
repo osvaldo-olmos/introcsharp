@@ -30,7 +30,7 @@ namespace OOP_EjemplosClase7
         }
 
         
-        ]/* Sobrecarga erronea porque ya existe un metodo con el mismo nombre y misma
+        /* Sobrecarga erronea porque ya existe un metodo con el mismo nombre y misma
             cantidad y tipo de argumentos
          
         public int Deposito(double cantidad)
