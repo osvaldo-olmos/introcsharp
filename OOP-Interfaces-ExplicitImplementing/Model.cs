@@ -18,19 +18,27 @@ namespace OOP_Interfaces
         string Drop();
     }
 
-    public class BusinessMan : IDriver, ISquashPlayer
+    public class BusinessMan : ISquashPlayer, IDriver
     {
 
         public string Drive()
         {
-            return "Driving...";
+            return "Driving business";
         }
 
 
+        //Explicit implementation cannot have public/protected or private
+        string IDriver.Drive()
+        {
+            return "Driving a vehicle...";
+        }
+
+        //Explicit implementation cannot have public/protected or private
         string ISquashPlayer.Drive()
         {
             return "Hitting a drive";
         }
+
         public string Backhand()
         {
             return "Hitting a backhand";
