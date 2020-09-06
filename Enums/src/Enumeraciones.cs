@@ -2,7 +2,7 @@ using System;
 
 namespace Enums
 {
-    enum Dia { Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado };
+    enum Dia { Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado }
     enum Mes : byte
     {
         Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto,

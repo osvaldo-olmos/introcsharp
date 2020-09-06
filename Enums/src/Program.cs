@@ -6,9 +6,9 @@ namespace Enums
     {
         static void Main(string[] args)
         {
-            //TestEnums();
+            TestEnums();
             //TestBitwise();
-            TestEnumAndBitFlags();
+            //TestEnumAndBitFlags();
             //DiscoverEnumValues();
 
         }
@@ -16,6 +16,15 @@ namespace Enums
 
         static void TestEnums()
         {
+            
+            Dia hoy = (Dia)2;
+            if (Enum.IsDefined(typeof(Dia), hoy))
+            {
+            Console.WriteLine($"today is #{hoy}.");
+            } else{
+                Console.WriteLine($"{hoy} no es un número de Dia valido.");
+            }
+
             Dia today = Dia.Martes;
             int nroDeDia = (int)today;
             Console.WriteLine("{0} es el dia numero #{1}.", today, nroDeDia);
@@ -24,11 +33,16 @@ namespace Enums
             byte mesNro = (byte)mesCorriente;
             Console.WriteLine("{0} es el mes numero #{1}.", mesCorriente, mesNro);
 
-            //Ojo! Puedo asignar valores sin sentido !!!
+            // Para NO asignar valores sin sentido...
             mesCorriente = (Mes)88;
-            mesNro = (byte)mesCorriente;
-            Console.WriteLine("{0} es el mes numero #{1}.", mesCorriente, mesNro);
-
+            if (Enum.IsDefined(typeof(Mes), mesCorriente))
+            {
+                mesNro = (byte)mesCorriente;
+                Console.WriteLine("{0} es el mes numero #{1}.", mesCorriente, mesNro);
+            }else
+            {
+                Console.WriteLine($"{mesCorriente} no es un numero de mes valido.");
+            }    
         }
 
         static void TestBitwise()
