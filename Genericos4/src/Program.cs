@@ -28,7 +28,7 @@ namespace Genericos4
         }
     }
 
-    public class GenericContainer<T>
+    public class GenericContainer<T> where T : IFoo
     {
         public T Content { get; }
 
