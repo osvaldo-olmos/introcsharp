@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 
 namespace Delegados3
 {
@@ -6,17 +6,30 @@ namespace Delegados3
     {
         static void Main(string[] args)
         {
-            Publisher publisher =new Publisher();
-            SubscriberOne subscriber1 =new SubscriberOne();
-            publisher.Subscribe(subscriber1.EventHandler);
-            SubscriberTwo subscriber2 =new SubscriberTwo();
-            publisher.Subscribe(subscriber2.EventHandler);
+            Emisor emisor = new Emisor("Pica bochos");
 
-            publisher.Run();
+            Suscriptor susc = null;
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Ingrese suscriptor:");
+                Suscriptor subscriptor = new Suscriptor(Console.ReadLine());
+                emisor.Suscribir(subscriptor.EventHandler);
+                if (i == 2)
+                {
+                    susc = subscriptor;
+                }
+            }
 
-            publisher.UnSubscribe(subscriber2.EventHandler);
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Ingrese novedad:");
+                emisor.Difundir(Console.ReadLine());
+            }
 
-            publisher.Run();
+            emisor.Desuscribir(susc.EventHandler);
+
+            Console.WriteLine("Ingrese novedad:");
+            emisor.Difundir(Console.ReadLine());
         }
     }
 }
