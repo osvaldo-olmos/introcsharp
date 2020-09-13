@@ -23,10 +23,12 @@ namespace RefAndOut.src
             else
                 Console.WriteLine("El resultado de la suma es " + resSuma);
 
-            int s, r;
-            parametros.OojedMethod(ref a, ref b, out s, out r);
+            int suma, resta;
+            string ret =parametros.OojedMethod(ref a, ref b, out suma, out resta);
 
-            Console.WriteLine("s es : " + s + " - r es : " + r);
+            Console.WriteLine($"{a} y {b} concatenados es: {ret}");
+            Console.WriteLine($"la suma de {a} + {b}  es : " + suma);
+            Console.WriteLine($"la resta de {a} - {b}  es : " + resta);
         }
     }
 }
