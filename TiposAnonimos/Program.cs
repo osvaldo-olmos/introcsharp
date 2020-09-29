@@ -26,6 +26,7 @@ namespace TiposAnonimos
             Console.WriteLine(persona2.ToString());
             Console.WriteLine(persona2.Equals(persona3));
             Console.WriteLine(persona3.Equals(persona4));
+            Console.WriteLine(persona2.Equals(persona4));
         }
     }
 }
