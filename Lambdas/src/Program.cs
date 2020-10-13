@@ -1,4 +1,5 @@
 ﻿    using System;
+using System.Collections.Generic;
 
 namespace Lambdas
 {
@@ -104,11 +105,30 @@ namespace Lambdas
         // }
 
 
+        private static void RunEjemplo4()
+        {
+            List<Action> actions = new List<Action>();
+
+            //Add some actions
+            for (int counter = 0; counter < 10; counter++)
+            {
+                actions.Add(() => Console.WriteLine($"My number is {counter}"));
+            }
+
+            //Call the actions
+            foreach (var action in actions)
+            {
+                action();
+            }            
+        }
+
+
         static void Main(string[] args)
         {
-            RunEjemplo1();
+            //RunEjemplo1();
             //RunEjemplo2();
             //RunEjemplo3();
+            RunEjemplo4();
         }
     }
 }
