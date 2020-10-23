@@ -12,9 +12,10 @@ namespace Lambdas
             List<Action> actions = new List<Action>();
 
             //Add some actions
-            for (int counter = 0; counter < 10; counter++)
+            for (int i = 0; i < 10; i++)
             {
-                actions.Add(() => Console.WriteLine($"My number is {counter}"));
+                Console.WriteLine($"My number is {i}");
+                actions.Add(() => Console.WriteLine($"My number is {i}"));
             }
 
             //Call the actions. Which numbers will be printed out ?
@@ -39,9 +40,9 @@ namespace Lambdas
 
         static void Main(string[] args)
         {
-            //RunEjemplo1();
+            RunEjemplo1();
             //ClosureExample();
-            ClosureExample1();
+            //ClosureExample1();
         }
 
         private static void ClosureExample1()
